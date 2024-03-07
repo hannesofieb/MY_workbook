@@ -21,8 +21,7 @@ h1{
 
 
 /* IMAGE WHEEL */
-.wheel-of-photos{
-    position: right;
+.photo-wall{
 }
 img{
     max-width: 10em;
