@@ -1,0 +1,46 @@
+body{
+    background-color: #f8f5f2;
+}
+
+
+/* HEADING SECTION */
+h1{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10em;
+}
+
+.left-side{
+    float: left;
+}
+
+.right-side{
+    float: right;
+}
+
+
+
+/* IMAGE WHEEL */
+.wheel-of-photos{
+    position: right;
+}
+img{
+    max-width: 10em;
+}
+
+img:hover{
+    max-width: 25em;
+
+}
+
+/* footer */
+footer{
+    background-color: blue;
+    width: 100vw;
+    height: 25vh;
+}
+
+footer >h1{
+    color: #f8f5f2;
+    width: 100vw;
+}
