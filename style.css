@@ -1,13 +1,19 @@
+html{
+    cursor: url("workbook/cursor01.png"), auto;
+    }
+
 body{
-    background-color: #f8f5f2;
+    background-image: url(workbook/img/atelier-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    /* background-color: beige; */
 }
 
 
 /* TEXT*/
 h1{
-    color: blue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 8em;
+    font-size: 3em;
 }
 
 figcaption{
@@ -19,29 +25,40 @@ figcaption{
 
 /* IMAGE GALLERY */
 .container{
+    height: 80vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+
+    position: relative;
 }
 
 .item{
-    width: 100px;
-    margin: 5em 5em 0 5em;
+    width: 15%;
+    height: 15%;
+    padding: 0.5em 0.5em 1.5em 0.5em;
+    padd
     flex: auto;
 }
 
 img{
-    max-width: 6em;
+    width:250px;
+    height:150px;
+    object-fit: cover;
 }
 
 .hidden{
     display: none;
 }
 
-
-
+/* make gallery scrollable */
+.container{
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
 
 /* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
 img:hover {
@@ -67,12 +84,15 @@ img:hover {
 
 /* footer */
 nav{
-    background-color: blue;
+    position: relative;
+    /* background-color: #ef2300; */
     width: 100vw;
-    height: 25vh;
+    height: 20vh;
+    margin: 0;
 }
 
 nav >h1{
-    color: #f8f5f2;
-    width: 100vw;
+    font-weight:bolder;
+    color: #ef2300;
+    padding: 0.5em;
 }
