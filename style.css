@@ -3,74 +3,66 @@ body{
 }
 
 
-/* HEADING SECTION */
+/* TEXT*/
 h1{
     color: blue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 8em;
 }
 
-.left-side{
-    float: left;
-}
-
-.right-side{
-    float: right;
+figcaption{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.5em;
 }
 
 
 
-/* IMAGE WHEEL */
+/* IMAGE GALLERY */
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: flex-start;
     flex-wrap: wrap;
-    flex-flow: column wrap;
 }
 
 .item{
-    order: 5;
+    width: 100px;
+    margin: 5em 5em 0 5em;
+    flex: auto;
 }
+
 img{
-    max-width: 10em;
+    max-width: 6em;
 }
 
-/* wiggle function retrieved from https://codepen.io/theDeanH/pen/zBZXLN */
-img:hover{
-    -webkit-animation-name: wiggle;
-    -ms-animation-name: wiggle;
-    -ms-animation-duration: 1000ms;
-    -webkit-animation-duration: 1000ms;
-    -webkit-animation-iteration-count: 1;
-    -ms-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-in-out;
-    -ms-animation-timing-function: ease-in-out;
+.hidden{
+    display: none;
 }
 
-@-webkit-keyframes wiggle {
-    0% {-webkit-transform: rotate(3deg);}
-    25% {-webkit-transform: rotate(-2deg);}
-    50% {-webkit-transform: rotate(2deg);}
-    75% {-webkit-transform: rotate(-2deg);}
-    100% {-webkit-transform: rotate(0deg);}
-}
+
+
+
+/* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+img:hover {
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
   
-@-ms-keyframes wiggle {
-    0% {-ms-transform: rotate(1deg);}
-    25% {-ms-transform: rotate(-1deg);}
-    50% {-ms-transform: rotate(1.5deg);}
-    75% {-ms-transform: rotate(-5deg);}
-    100% {-ms-transform: rotate(0deg);}
-}
-  
-@keyframes wiggle {
-    0% {transform: rotate(3deg);}
-    25% {transform: rotate(-2deg);}
-    50% {transform: rotate(2deg);}
-    75% {transform: rotate(-2deg);}
-    100% {transform: rotate(0deg);}
-}
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(1px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(0px, 1px) rotate(0deg); }
+    70% { transform: translate(1px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 
 /* footer */

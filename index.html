@@ -8,43 +8,58 @@
     <title>MY_WORKBOOK</title>
 </head>
 <body>
+    <script>"use strict";
+
+        document.addEventListener("click", event => {
+            const img = event.target.closest(".toggle-image");
+            if (img && img.nextElementSibling.tagName === "FIGCAPTION") {
+                img.nextElementSibling.classList.toggle("hidden");
+            }
+        });
+        
+    //    What you could do is create a function which resizes your image and caption, by applying new class 
+    // names that have styling to make tgh eimage full page width
+        </script>
     <section class="container">
-        <div id="W1">
-            <figure class="item">
-                <img src="workbook/img/W1_gestureDictionary01.jpg" alt="grid showing various gestures">
-                <caption>dictionary of gestures: exploring interacting gestures</caption>
-            </figure>
-            <figure class="item">
-                <img src="workbook/img/W1_gestureDictionary02.jpg" alt="grid showing various gestures">
-                <caption>dictionary of gestures: exploring more interacting gestures</caption>
-            </figure>
-            <figure class="item">
-                <img src="workbook/img/W1_gestureDictionary03.jpg" alt="grid showing various gestures">
-                <caption>dictionary of gestures: exploring more unconventional interacting gestures</caption>
-            </figure>
-            <figure class="item">
-                <img src="workbook/img/W1_anatomyOfWWW01.jpeg" alt="laptop screen showing website">
-                <caption>PLAYING TAG: getting more comfortable with HTML, but first getting a website idea from DESIGNERCIZE</caption>
-            </figure>            
-            <figure class="item">
-                <img src="workbook/img/W1_anatomyOfWWW02.jpeg" alt="wireframes">
-                <caption>PLAYING TAG: getting more comfortable with HTML, but first we need to make WIREFRAMES</caption>
-            </figure>
-            <figure class="item">
-                <img src="workbook/img/W1_anatomyOfWWW03.jpeg" alt="html tags printed out and laid down on floor">
-                <caption>PLAYING TAG: getting more comfortable with HTML, on a team of 4 we ran up to gather tags to build the wireframe</caption>
-            </figure>
-        </div>
-        <div id="W2">
-            <figure class="item">
-                <img src="" alt="">
-                <caption>CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</caption>
-            </figure>
-            <figure class="item">
-                <img src="" alt="">
-                <caption>MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</caption>
-            </figure>
-        </div>
+        <!--WEEK 1 -->
+        <figure class="item">
+            <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image" alt="grid showing various gestures">
+            <figcaption class="hidden">dictionary of gestures: exploring interacting gestures</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image" alt="grid showing various gestures">
+            <figcaption class="hidden">dictionary of gestures: exploring more interacting gestures</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="workbook/img/W1_gestureDictionary03.jpg" class="toggle-image" alt="grid showing various gestures">
+            <figcaption class="hidden">dictionary of gestures: exploring more unconventional interacting gestures</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="workbook/img/W1_anatomyOfWWW01.jpeg" class="toggle-image" alt="laptop screen showing website">
+            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, but first getting a website idea from DESIGNERCIZE</figcaption>
+        </figure>            
+        <figure class="item">
+            <img src="workbook/img/W1_anatomyOfWWW02.jpeg" class="toggle-image" alt="wireframes">
+            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, but first we need to make WIREFRAMES</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="workbook/img/W1_anatomyOfWWW03.jpeg" class="toggle-image" alt="html tags printed out and laid down on floor">
+            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, on a team of 4 we ran up to gather tags to build the wireframe</figcaption>
+        </figure>
+        <!--WEEK 2 -->
+        <figure class="item"> 
+            <img src="" class="toggle-image" alt="">
+            <figcaption class="hidden">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="" class="toggle-image" alt="">
+            <figcaption class="hidden">MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</figcaption>
+        </figure>
+        <!--WEEK 3 -->
+        <figure class="item">
+            <img src="" class="toggle-image" alt="">
+            <figcaption class="hidden">RESPONSIVE: making wireframes for mobile version</figcaption>
+        </figure>
     </section>
     <nav>
         <h1>MY_WORKBOOK</h1>
