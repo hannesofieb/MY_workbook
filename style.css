@@ -7,7 +7,7 @@ body{
 h1{
     color: blue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 10em;
+    font-size: 8em;
 }
 
 .left-side{
@@ -21,25 +21,66 @@ h1{
 
 
 /* IMAGE WHEEL */
-.photo-wall{
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+}
+
+.item{
+    order: 5;
 }
 img{
     max-width: 10em;
 }
 
+/* wiggle function retrieved from https://codepen.io/theDeanH/pen/zBZXLN */
 img:hover{
-    max-width: 25em;
-
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
 }
 
+@-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(3deg);}
+    25% {-webkit-transform: rotate(-2deg);}
+    50% {-webkit-transform: rotate(2deg);}
+    75% {-webkit-transform: rotate(-2deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+  
+@-ms-keyframes wiggle {
+    0% {-ms-transform: rotate(1deg);}
+    25% {-ms-transform: rotate(-1deg);}
+    50% {-ms-transform: rotate(1.5deg);}
+    75% {-ms-transform: rotate(-5deg);}
+    100% {-ms-transform: rotate(0deg);}
+}
+  
+@keyframes wiggle {
+    0% {transform: rotate(3deg);}
+    25% {transform: rotate(-2deg);}
+    50% {transform: rotate(2deg);}
+    75% {transform: rotate(-2deg);}
+    100% {transform: rotate(0deg);}
+}
+
+
 /* footer */
-footer{
+nav{
     background-color: blue;
     width: 100vw;
     height: 25vh;
 }
 
-footer >h1{
+nav >h1{
     color: #f8f5f2;
     width: 100vw;
 }
