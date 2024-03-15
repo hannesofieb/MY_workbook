@@ -3,9 +3,6 @@ html{
     }
 
 body{
-    /* background-image: url(workbook/img/atelier-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh; */
     background-color: #f8f6f1;
 }
 
@@ -34,8 +31,8 @@ figcaption{
     align-items: flex-start;
     flex-wrap: wrap;
 
-    position: relative;
-    min-width: fit-content;
+    position:relative;
+
 }
 
 .item{
@@ -92,7 +89,7 @@ nav{
     align-items: flex-start;
     flex-wrap: wrap;
 
-    position: relative;
+    position: absolute;
     background-color: #ef2300;
     width: 100vw;
     height: 20vh;
@@ -103,7 +100,7 @@ nav{
 nav >h1{
     font-weight: 500;
     color: #f8f6f1;
-    padding: 0.5em 0 0 0.5em;
+    padding: 0.5em 0.5em 0 0.5em;
     margin-block-start: 0;
     margin-block-end: 0;
 }
