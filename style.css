@@ -3,16 +3,18 @@ html{
     }
 
 body{
-    background-image: url(workbook/img/atelier-background.jpg);
+    /* background-image: url(workbook/img/atelier-background.jpg);
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    /* background-color: beige; */
+    background-size: 100vw 100vh; */
+    background-color: #f8f6f1;
 }
 
 
 /* TEXT*/
 h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "pf-videotext", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 3em;
 }
 
@@ -33,19 +35,19 @@ figcaption{
     flex-wrap: wrap;
 
     position: relative;
+    min-width: fit-content;
 }
 
 .item{
     width: 15%;
     height: 15%;
     padding: 0.5em 0.5em 1.5em 0.5em;
-    padd
     flex: auto;
 }
 
 img{
-    width:250px;
-    height:150px;
+    width:150px;
+    height:100px;
     object-fit: cover;
 }
 
@@ -55,7 +57,7 @@ img{
 
 /* make gallery scrollable */
 .container{
-    overflow: auto;
+    overflow: hidden;
     white-space: nowrap;
     padding: 10px;
   }
@@ -85,14 +87,17 @@ img:hover {
 /* footer */
 nav{
     position: relative;
-    /* background-color: #ef2300; */
+    background-color: #ef2300;
     width: 100vw;
-    height: 20vh;
+    height: 15vh;
     margin: 0;
+
 }
 
 nav >h1{
-    font-weight:bolder;
-    color: #ef2300;
-    padding: 0.5em;
+    font-weight: 500;
+    color: #f8f6f1;
+    padding: 0.5em 0 0 0.5em;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
