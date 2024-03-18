@@ -116,15 +116,15 @@
 <body>
     <section class="container scroll-container">
         <figure class="item scroll-text">
-            <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image" alt="grid showing various gestures">
+            <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image myImg" alt="grid showing various gestures">
             <figcaption class="hidden">dictionary of gestures: exploring interacting gestures</figcaption>
         </figure>
         <figure class="item  scroll-text">
-            <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image" alt="grid showing various gestures">
+            <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image myImg" alt="grid showing various gestures">
             <figcaption class="hidden">dictionary of gestures: exploring more interacting gestures</figcaption>
         </figure>
         <figure class="item scroll-text">
-            <img src="workbook/img/W1_gestureDictionary03.jpg" class="toggle-image" alt="grid showing various gestures">
+            <img src="workbook/img/W1_gestureDictionary03.jpg" class="toggle-image myImg" alt="grid showing various gestures">
             <figcaption class="hidden">dictionary of gestures: exploring more unconventional interacting gestures</figcaption>
         </figure>
         <figure class="item scroll-text">
@@ -200,6 +200,45 @@
 
     </nav>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="caption"></div>
+    </div>
+
+    <script>
+// Get all the images with class "toggle-image"
+    var images = document.querySelectorAll(".toggle-image");
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the modal image and caption elements
+    var modalImg = document.getElementById("modalImg");
+    var captionText = document.querySelector(".caption");
+
+    // Loop through each image and attach a click event listener
+    images.forEach(function(image) {
+        image.onclick = function() {
+            // Set the display of the modal to block to show it
+            modal.style.display = "block";
+            // Set the source of the modal image to the source of the clicked image
+            modalImg.src = this.src;
+            // Set the caption text of the modal to the alt text of the clicked image
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Get the close button for the modal
+    var closeButton = document.querySelector(".close");
+
+    // Add a click event listener to the close button to hide the modal when clicked
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    };        
+    </script>
+    
 
 </body>
 </html>
