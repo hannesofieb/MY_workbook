@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qwq2sbn.css">
+    <link rel="icon" type="image/x-icon" href="workbook/cursor01.png">
 
+
+
+    <title>MY_TEST</title>
     <style>
         img{
-            width:150px;
-            height:100px;
+            width:200px;
+            height: 120px;
             object-fit: cover;
+        }
+
+        /* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+        img:hover {
+            animation: shake 0.5s;
+            /* When the animation is finished, start again */
+            animation-iteration-count: infinite;
+        }
+  
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(1px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(0px, 1px) rotate(0deg); }
+            70% { transform: translate(1px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
 
         .scroll-container {
@@ -23,9 +49,9 @@
             position:relative;
         }
 
-        .hidden {
+        /* .hidden {
             display: none;
-        }
+        } */
 
         .item {
             width: 15%;
@@ -34,15 +60,39 @@
             flex: auto;
         }
 
+        /* footer */
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            position: absolute;
+            background-color: #ef2300;
+            width: 100vw;
+            height: 20vh;
+            margin: 0;
+
+        }
+
+        nav >h1{
+            font-weight: 500;
+            color: #f8f6f1;
+            padding: 0.5em 0.5em 0 0.5em;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
         /* Keyframes for scrolling */
         @keyframes scroll-left {
-            from { transform: translateX(0%); }
-            to { transform: translateX(-100%); }
+            from { transform: translateX(200vh); }
+            to { transform: translateX(-180vh); }
         }
 
         @keyframes scroll-right {
-            from { transform: translateX(0%); }
-            to { transform: translateX(100%); }
+            from { transform: translateX(-220vh); }
+            to { transform: translateX(180vh); }
         }
 
         /* Apply animations to alternate rows */
@@ -53,8 +103,16 @@
         .scroll-text:nth-child(even) {
             animation: scroll-left 15s linear infinite;
         }
+
+        /* Pause animation on hover */
+        .scroll-text:hover {
+            animation-play-state: paused;
+        }
+
+
     </style>
 </head>
+
 <body>
     <section class="container scroll-container">
         <figure class="item scroll-text">
@@ -131,7 +189,18 @@
             <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-03.gif" class="toggle-image gifs" alt="gif of website development">
             <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
         </figure>
+        <figure class="item scroll-text"></figure>
+        <figure class="item scroll-text"></figure>
+
     </section>
+
+    <nav>
+        <h1 class="nav-item"> MY_WORKBOOK</h1>
+        <h1 class="nav-item">RESEARCH JOURNAL</h1>
+
+    </nav>
+
+
 </body>
 </html>
 

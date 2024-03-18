@@ -32,7 +32,7 @@ figcaption{
     flex-wrap: wrap;
     position:relative;
 
-}
+} */
 
 .item{
     width: 15%;
@@ -42,14 +42,11 @@ figcaption{
 }
 
 img{
-    width:150px;
-    height:100px;
+    width:200px;
+    height: 120px;
     object-fit: cover;
 }
 
-.hidden{
-    display: none;
-}
 
 /* make gallery scrollable */
 .container{
@@ -58,48 +55,96 @@ img{
     padding: 10px;
   }
 
-/* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
-img:hover {
-    animation: shake 0.5s;
-    /* When the animation is finished, start again */
-    animation-iteration-count: infinite;
+
+
+  /* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+  img:hover {
+      animation: shake 0.5s;
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
   }
-  
+
   @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(1px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(0px, 1px) rotate(0deg); }
-    70% { transform: translate(1px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(1px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(0px, 1px) rotate(0deg); }
+      70% { transform: translate(1px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 
+  .scroll-container {
+      overflow: hidden;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      position:relative;
+  }
 
-/* footer */
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+  .hidden {
+      display: none;
+  }
 
-    position: absolute;
-    background-color: #ef2300;
-    width: 100vw;
-    height: 20vh;
-    margin: 0;
+  .item {
+      width: 15%;
+      height: 15%;
+      padding: 0.5em 0.5em 1.5em 0.5em;
+      flex: auto;
+  }
 
-}
+  /* footer */
+  nav{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
 
-nav >h1{
-    font-weight: 500;
-    color: #f8f6f1;
-    padding: 0.5em 0.5em 0 0.5em;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
+      position: absolute;
+      background-color: #ef2300;
+      width: 100vw;
+      height: 20vh;
+      margin: 0;
+
+  }
+
+  nav >h1{
+      font-weight: 500;
+      color: #f8f6f1;
+      padding: 0.5em 0.5em 0 0.5em;
+      margin-block-start: 0;
+      margin-block-end: 0;
+  }
+
+  /* Keyframes for scrolling */
+  @keyframes scroll-left {
+      from { transform: translateX(200vh); }
+      to { transform: translateX(-180vh); }
+  }
+
+  @keyframes scroll-right {
+      from { transform: translateX(-220vh); }
+      to { transform: translateX(180vh); }
+  }
+
+  /* Apply animations to alternate rows */
+  .scroll-text:nth-child(odd) {
+      animation: scroll-right 15s linear infinite;
+  }
+
+  .scroll-text:nth-child(even) {
+      animation: scroll-left 15s linear infinite;
+  }
+
+  /* Pause animation on hover */
+  .scroll-text:hover {
+      animation-play-state: paused;
+  }
