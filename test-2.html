@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .scroll-container {
+            overflow: hidden;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .item {
+            width: 15%;
+            height: 15%;
+            padding: 0.5em 0.5em 1.5em 0.5em;
+            flex: auto;
+        }
+
+        .scroll-text {
+            text-align: right;
+        }
+
+        /* Week containers */
+        .week-container {
+            width: 100%; /* Fills the entire horizontal space */
+            margin-bottom: 1em; /* Spacing between weeks */
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap; /* Prevents content from wrapping */
+        }
+
+        /* Style scrollbar (Optional) */
+        .week-container::-webkit-scrollbar {
+            width: 10px; /* Scrollbar width */
+        }
+
+        .week-container::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Track color */
+        }
+
+        .week-container::-webkit-scrollbar-thumb {
+            background: #ddd; /* Thumb color */
+        }
+
+        .week-container::-webkit-scrollbar-thumb:hover {
+            background: #888; /* Thumb hover color */
+        }
+    </style>
+</head>
+<body>
+    <section class="container scroll-container">
+        <div class="week-container">
+            <figure class="item scroll-text">
+                <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image" alt="grid showing various gestures">
+                <figcaption class="hidden">dictionary of gestures: exploring interacting gestures</figcaption>
+            </figure>
+            <figure class="item scroll-text">
+                <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image" alt="grid showing various gestures">
+                <figcaption class="hidden">dictionary of gestures: exploring more interacting gestures</figcaption>
+            </figure>
+            </div>
+
+        <div class="week-container">
+            <figure class="item scroll-text">
+                <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-01.gif" class="toggle-image gifs" alt="gif of first website version">
+                <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
+            </figure>
+            <figure class="item scroll-text">
+                </figure>
+        </div>
+
+        <div class="week-container">
+            <figure class="item scroll-text">
+                <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-02.gif" class="toggle-image gifs" alt="gif of website development">
+                <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
+            </figure>
+            </div>
+    </section>
+
+</body>
+</html>
