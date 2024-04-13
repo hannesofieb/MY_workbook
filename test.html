@@ -3,245 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/qwq2sbn.css">
-    <link rel="icon" type="image/x-icon" href="workbook/cursor01.png">
+    <link rel="stylesheet" type="text/css" href="research-styles.css">
+    <link rel="stylesheet" href="basic-styles.css">
 
+    <title>test</title>
 
-
-    <title>MY_TEST</title>
     <style>
-        img{
-            width:200px;
-            height: 120px;
-            object-fit: cover;
-        }
-
-        /* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
-        img:hover {
-            animation: shake 0.5s;
-            /* When the animation is finished, start again */
-            animation-iteration-count: infinite;
-        }
-  
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(1px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(0px, 1px) rotate(0deg); }
-            70% { transform: translate(1px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
-
-        .scroll-container {
-            overflow: hidden;
-            height: 80vh;
+        .container {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            position:relative;
-        }
-
-        /* .hidden {
-            display: none;
-        } */
-
-        .item {
-            width: 15%;
-            height: 15%;
-            padding: 0.5em 0.5em 1.5em 0.5em;
-            flex: auto;
-        }
-
-        /* footer */
-        nav{
-            display: flex;
+            justify-content: flex-start;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-
-            position: absolute;
-            background-color: #ef2300;
-            width: 100vw;
-            height: 20vh;
-            margin: 0;
-
+            flex-wrap: nowrap;
+            max-height: 86vh;
+            margin: 0 auto;
+            background-color: #f8f5f2;
         }
 
-        nav >h1{
-            font-weight: 500;
-            color: #f8f6f1;
-            padding: 0.5em 0.5em 0 0.5em;
-            margin-block-start: 0;
-            margin-block-end: 0;
-        }
-
-        /* Keyframes for scrolling */
-        @keyframes scroll-left {
-            from { transform: translateX(200vh); }
-            to { transform: translateX(-180vh); }
-        }
-
-        @keyframes scroll-right {
-            from { transform: translateX(-220vh); }
-            to { transform: translateX(180vh); }
-        }
-
-        /* Apply animations to alternate rows */
-        .scroll-text:nth-child(odd) {
-            animation: scroll-right 15s linear infinite;
-        }
-
-        .scroll-text:nth-child(even) {
-            animation: scroll-left 15s linear infinite;
-        }
-
-        /* Pause animation on hover */
-        .scroll-text:hover {
-            animation-play-state: paused;
+        .flex-item {
+            min-height: 100%;
+            position: relative;
+            transition: max-width 0.1s ease; /* Transition for smooth effect */
         }
 
 
+        img {
+            max-height: 90vh;
+        }
+
+        img:hover{
+            max-width: 50vw;
+        }
+
+        .flex-item:hover {
+            z-index: 1000;
+        }
+
+        .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 367%;
+        background-color: white;
+        padding: 10%;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        font-family:sans-serif;
+        font-size: 0.7em;
+    }
+
+    .flex-item:hover .caption {
+        opacity: 1;
+    }
     </style>
 </head>
-
 <body>
-    <section class="container scroll-container">
-        <figure class="item scroll-text">
-            <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image myImg" alt="grid showing various gestures">
-            <figcaption class="hidden">dictionary of gestures: exploring interacting gestures</figcaption>
+    <nav>
+        <li><a href="index.html">my_workbook</a></li>
+        <li><a href="research.html">research</a></li>
+        <li><a href="play.html">play</a></li>
+    </nav>
+    <section class="container">
+        <!-- schultzschultz-type -->
+        <figure class="flex-item item1">
+            <img class="image" src="https://www.schultzschultz.com/images/mak_01_reduced.gif?crc=118420628" alt="">
+            <figcaption class="caption">schultzschultz studio ALLES NEU! "For a typography exhibition at the Museum for Applied Art Frankfurt we created a series of video clips of letterforms being manipulated by multiple and custom built devices."</figcaption>
         </figure>
-        <figure class="item  scroll-text">
-            <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image myImg" alt="grid showing various gestures">
-            <figcaption class="hidden">dictionary of gestures: exploring more interacting gestures</figcaption>
+        <figure class="flex-item">
+            <img class="image" src="https://www.schultzschultz.com/images/mak_a.gif?crc=344301308" alt="">
+            <figcaption class="caption">schultzschultz studio ALLES NEU! "For a typography exhibition at the Museum for Applied Art Frankfurt we created a series of video clips of letterforms being manipulated by multiple and custom built devices."</figcaption>
         </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W1_gestureDictionary03.jpg" class="toggle-image myImg" alt="grid showing various gestures">
-            <figcaption class="hidden">dictionary of gestures: exploring more unconventional interacting gestures</figcaption>
+        <figure class="flex-item">
+            <img class="image" src="https://www.schultzschultz.com/images/mak_t.gif?crc=3874470323" alt="">
+            <figcaption class="caption">schultzschultz studio ALLES NEU! "For a typography exhibition at the Museum for Applied Art Frankfurt we created a series of video clips of letterforms being manipulated by multiple and custom built devices."</figcaption>
         </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W1_anatomyOfWWW01.jpg" class="toggle-image" alt="laptop screen showing website">
-            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, but first getting a website idea from DESIGNERCIZE</figcaption>
-        </figure>            
-        <figure class="item scroll-text">
-            <img src="workbook/img/W1_anatomyOfWWW02.jpg" class="toggle-image" alt="wireframes">
-            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, but first we need to make WIREFRAMES</figcaption>
+        <figure class="flex-item">
+            <img class="image" src="https://www.schultzschultz.com/images/mak_typo_wall.jpg?crc=4001662411" alt="">
+            <figcaption class="caption">schultzschultz studio ALLES NEU! "For a typography exhibition at the Museum for Applied Art Frankfurt we created a series of video clips of letterforms being manipulated by multiple and custom built devices."</figcaption>
         </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W1_anatomyOfWWW03.jpg" class="toggle-image" alt="html tags printed out and laid down on floor">
-            <figcaption class="hidden">PLAYING TAG: getting more comfortable with HTML, on a team of 4 we ran up to gather tags to build the wireframe</figcaption>
-        </figure>
-        <!--WEEK 2 -->
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-01.gif" class="toggle-image gifs" alt="gif of first website version">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text"> 
-            <img src="workbook/img/W2_crazy8s01.jpg" class="toggle-image" alt="4 of the crazy 8 wireframes">
-            <figcaption class="hidden">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
-        </figure>
-        <figure class="item scroll-text"> 
-            <img src="workbook/img/W2_crazy8s02.jpg" class="toggle-image" alt="4 of the crazy 8 wireframes">
-            <figcaption class="hidden">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
-        </figure>
-        <figure class="item scroll-text"> 
-            <img src="workbook/img/W2_crazy8s04.png" class="toggle-image" alt="crazy 8 sheets on wall">
-            <figcaption class="hidden">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W2_MakeItGlow01.jpg" class="toggle-image" alt="">
-            <figcaption class="hidden">MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W2_MakeItGlow02.jpg" class="toggle-image" alt="">
-            <figcaption class="hidden">MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</figcaption>
-        </figure>
-        <!--WEEK 3 -->
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-02.gif" class="toggle-image gifs" alt="gif of website development">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/img/W3_responsivePhone.jpg" class="toggle-image" alt="mobile wireframe of website">
-            <figcaption class="hidden">RESPONSIVE: making wireframes for mobile version</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-03.gif" class="toggle-image gifs" alt="gif of website development">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-01.gif" class="toggle-image gifs" alt="gif of website development">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-02.gif" class="toggle-image gifs" alt="gif of website development">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text">
-            <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-03.gif" class="toggle-image gifs" alt="gif of website development">
-            <figcaption class="hidden">MY_WORKBOOK v01</figcaption>
-        </figure>
-        <figure class="item scroll-text"></figure>
-        <figure class="item scroll-text"></figure>
 
+        <!-- test -->
+        <figure class="flex-item">
+            <img class="image" src="workbook/img/W1_anatomyOfWWW01.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        <figure class="flex-item">
+            <img class="image" src="workbook/img/W1_anatomyOfWWW02.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        <figure class="flex-item">
+            <img  class="image" src="workbook/img/W1_anatomyOfWWW03.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        <figure class="flex-item">
+            <img class="image" src="workbook/img/W1_anatomyOfWWW01.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        <figure class="flex-item">
+            <img class="image" src="workbook/img/W1_anatomyOfWWW02.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        <figure class="flex-item">
+            <img  class="image" src="workbook/img/W1_anatomyOfWWW03.jpg" alt="">
+            <figcaption class="caption"></figcaption>
+        </figure>
+        
+        <!-- BMW-interactive -->
+        <figure class="flex-item">
+            <a href="https://www.youtube.com/embed/_mGwJh4da5w?si=ZM2LyoUVUR8zikfC">
+                <img class="image" src="https://hips.hearstapps.com/hmg-prod/images/2024-bmw-i5-edrive40-interior-106-646d15f7ee204.jpg" alt="">
+            </a>
+            <figcaption class="caption">BMW's innovative interaction functions, linked to various feature you can adjust while you drive.</figcaption>    
+        </figure>
+        
     </section>
 
-    <nav>
-        <h1 class="nav-item"> MY_WORKBOOK</h1>
-        <h1 class="nav-item">RESEARCH JOURNAL</h1>
-
-    </nav>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <div class="caption"></div>
-    </div>
-
-    <script>
-// Get all the images with class "toggle-image"
-    var images = document.querySelectorAll(".toggle-image");
-
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the modal image and caption elements
-    var modalImg = document.getElementById("modalImg");
-    var captionText = document.querySelector(".caption");
-
-    // Loop through each image and attach a click event listener
-    images.forEach(function(image) {
-        image.onclick = function() {
-            // Set the display of the modal to block to show it
-            modal.style.display = "block";
-            // Set the source of the modal image to the source of the clicked image
-            modalImg.src = this.src;
-            // Set the caption text of the modal to the alt text of the clicked image
-            captionText.innerHTML = this.alt;
-        }
+    <script>window.addEventListener('load', function() {
+        const flexItems = document.querySelectorAll('.flex-item');
+        const containerWidth = document.querySelector('.container').getBoundingClientRect().width;
+        const numItems = flexItems.length;
+        const maxWidthPercentage = 100 / numItems; // Calculate the maximum width percentage for each flex-item
+    
+        flexItems.forEach(item => {
+            item.style.maxWidth = `${maxWidthPercentage}%`;
+    
+            item.addEventListener('mouseenter', function(event) {
+                const image = event.target.querySelector('img'); 
+                const imageWidth = image.getBoundingClientRect().width;
+                const viewportWidth = window.innerWidth;
+                const caption = event.target.querySelector('.caption'); 
+                
+                // Set maximum caption width to avoid exceeding viewport width
+                const maxCaptionWidth = viewportWidth * 0.9; // Adjust as needed
+                const calculatedWidth = Math.min(imageWidth, maxCaptionWidth);
+                
+                // Set the width of the caption to match the image width, up to the maximum width
+                caption.style.width = calculatedWidth + 'px'; 
+    
+                // Calculate the right edge position of the hovered flex-item
+                const itemRightEdge = item.getBoundingClientRect().right;
+                const newLeftPos = item.offsetLeft - calculatedWidth;
+    
+                // Move the last flex-item to the left if its right edge exceeds the viewport width
+                if (itemRightEdge > viewportWidth) {
+                    item.style.left = `${newLeftPos}px`;
+                }
+            });
+            
+            item.addEventListener('mouseleave', function(event) {
+                const caption = event.target.querySelector('.caption'); 
+                caption.style.width = ''; // Reset the width of the caption
+    
+                // Reset the left position of the flex-item on mouse leave
+                item.style.left = '';
+            });
+        });
     });
-
-    // Get the close button for the modal
-    var closeButton = document.querySelector(".close");
-
-    // Add a click event listener to the close button to hide the modal when clicked
-    closeButton.onclick = function() {
-        modal.style.display = "none";
-    };        
-    </script>
     
 
+    </script>
 </body>
 </html>
-
-
-

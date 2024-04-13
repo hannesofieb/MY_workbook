@@ -1,5 +1,6 @@
 body{
     background-color: #f8f6f1;
+    margin: 0;
 }
 
 
@@ -11,7 +12,7 @@ nav{
     width: 20vw;
     height: 15%;
     margin: 2em 0 1em 1em;
-    background-color: #f8f5f2;
+    /* background-color: #f8f5f2; */
 
     font-family: monospace;
     font-size: 1.2em;
