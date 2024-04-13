@@ -1,10 +1,8 @@
-html{
+/* html{
     cursor: url("workbook/cursor01.png"), auto;
-    }
+    } */
 
-body{
-    background-color: #f8f6f1;
-}
+
 
 
 /* TEXT*/
@@ -106,30 +104,6 @@ img{
       height: 15%;
       padding: 0.5em 0.5em 1.5em 0.5em;
       flex: auto;
-  }
-
-  /* footer */
-  nav{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-
-      position: absolute;
-      background-color: #ef2300;
-      width: 100vw;
-      height: 20vh;
-      margin: 0;
-
-  }
-
-  nav >h1{
-      font-weight: 500;
-      color: #f8f6f1;
-      padding: 0.5em 0.5em 0 0.5em;
-      margin-block-start: 0;
-      margin-block-end: 0;
   }
 
   /* Keyframes for scrolling */

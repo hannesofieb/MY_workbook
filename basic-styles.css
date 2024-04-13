@@ -1,0 +1,39 @@
+body{
+    background-color: #f8f6f1;
+}
+
+
+/* nav bar */
+nav{
+    display: block;
+    position: relative;
+    z-index: 1000;
+    width: 20vw;
+    height: 15%;
+    margin: 2em 0 1em 1em;
+    background-color: #f8f5f2;
+
+    font-family: monospace;
+    font-size: 1.2em;
+    color: #ed2121;
+    line-height: 1.5em;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+a:link {
+    color: #ed2121;
+}
+  
+a:visited {
+    color: #ed2121;
+}
+  
+a:active {
+    color: rgb(26, 21, 19);
+}
