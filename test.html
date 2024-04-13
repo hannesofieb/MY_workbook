@@ -9,53 +9,56 @@
     <title>test</title>
 
     <style>
+        body {
+            margin: 0; /* Remove default margin */
+        }
+
         .container {
             display: flex;
-            justify-content: flex-start;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            max-height: 86vh;
-            margin: 0 auto;
-            background-color: #f8f5f2;
+            max-width: 100vw; /* Limit container width to viewport width */
+            position: relative; /* Enable positioning of flex items */
+            overflow-y: hidden;
         }
 
         .flex-item {
-            min-height: 100%;
-            position: relative;
-            transition: max-width 0.1s ease; /* Transition for smooth effect */
+            position: relative; /* Enable z-index positioning */
+            z-index: 1; /* Set default z-index */
+
         }
 
+ 
+        .flex-item:hover {
+            z-index: 2; /* Increase z-index on hover */
+        }
 
         img {
-            max-height: 90vh;
+            height: 90vh;
+            width: 30vw;
+            overflow: hidden;
         }
 
-        img:hover{
-            max-width: 50vw;
-        }
-
-        .flex-item:hover {
-            z-index: 1000;
+        img:hover {
+            height: 90vh;
+            width: auto;
         }
 
         .caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 367%;
-        background-color: white;
-        padding: 10%;
-        box-sizing: border-box;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-family: sans-serif;
+            font-size: 0.7em;
+        }
 
-        font-family:sans-serif;
-        font-size: 0.7em;
-    }
-
-    .flex-item:hover .caption {
-        opacity: 1;
-    }
+        .flex-item:hover .caption {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -82,32 +85,6 @@
             <img class="image" src="https://www.schultzschultz.com/images/mak_typo_wall.jpg?crc=4001662411" alt="">
             <figcaption class="caption">schultzschultz studio ALLES NEU! "For a typography exhibition at the Museum for Applied Art Frankfurt we created a series of video clips of letterforms being manipulated by multiple and custom built devices."</figcaption>
         </figure>
-
-        <!-- test -->
-        <figure class="flex-item">
-            <img class="image" src="workbook/img/W1_anatomyOfWWW01.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
-        <figure class="flex-item">
-            <img class="image" src="workbook/img/W1_anatomyOfWWW02.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
-        <figure class="flex-item">
-            <img  class="image" src="workbook/img/W1_anatomyOfWWW03.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
-        <figure class="flex-item">
-            <img class="image" src="workbook/img/W1_anatomyOfWWW01.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
-        <figure class="flex-item">
-            <img class="image" src="workbook/img/W1_anatomyOfWWW02.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
-        <figure class="flex-item">
-            <img  class="image" src="workbook/img/W1_anatomyOfWWW03.jpg" alt="">
-            <figcaption class="caption"></figcaption>
-        </figure>
         
         <!-- BMW-interactive -->
         <figure class="flex-item">
@@ -119,49 +96,42 @@
         
     </section>
 
-    <script>window.addEventListener('load', function() {
-        const flexItems = document.querySelectorAll('.flex-item');
-        const containerWidth = document.querySelector('.container').getBoundingClientRect().width;
-        const numItems = flexItems.length;
-        const maxWidthPercentage = 100 / numItems; // Calculate the maximum width percentage for each flex-item
-    
-        flexItems.forEach(item => {
-            item.style.maxWidth = `${maxWidthPercentage}%`;
-    
-            item.addEventListener('mouseenter', function(event) {
-                const image = event.target.querySelector('img'); 
-                const imageWidth = image.getBoundingClientRect().width;
-                const viewportWidth = window.innerWidth;
-                const caption = event.target.querySelector('.caption'); 
-                
-                // Set maximum caption width to avoid exceeding viewport width
-                const maxCaptionWidth = viewportWidth * 0.9; // Adjust as needed
-                const calculatedWidth = Math.min(imageWidth, maxCaptionWidth);
-                
-                // Set the width of the caption to match the image width, up to the maximum width
-                caption.style.width = calculatedWidth + 'px'; 
-    
-                // Calculate the right edge position of the hovered flex-item
-                const itemRightEdge = item.getBoundingClientRect().right;
-                const newLeftPos = item.offsetLeft - calculatedWidth;
-    
-                // Move the last flex-item to the left if its right edge exceeds the viewport width
-                if (itemRightEdge > viewportWidth) {
-                    item.style.left = `${newLeftPos}px`;
-                }
-            });
-            
-            item.addEventListener('mouseleave', function(event) {
-                const caption = event.target.querySelector('.caption'); 
-                caption.style.width = ''; // Reset the width of the caption
-    
-                // Reset the left position of the flex-item on mouse leave
-                item.style.left = '';
-            });
-        });
-    });
-    
+    <script>
+    window.addEventListener('load', function() {
+    const container = document.querySelector('.container');
+    const flexItems = document.querySelectorAll('.flex-item');
+    let totalWidth = 0;
 
+    // Calculate the total width of flex items
+    flexItems.forEach(item => {
+        totalWidth += item.getBoundingClientRect().width;
+    });
+
+    console.log('Total Width:', totalWidth);
+
+    // Get viewport width
+    const viewportWidth = window.innerWidth;
+
+    console.log('Viewport Width:', viewportWidth);
+
+    // Set container width to the minimum of total width and viewport width
+    container.style.width = `${Math.min(totalWidth, viewportWidth)}px`;
+
+    console.log('Container Width:', container.style.width);
+
+    // Calculate the overlap amount per flex item
+    const overlapAmount = (totalWidth - viewportWidth) / (flexItems.length - 3);
+
+    console.log('Overlap Amount:', overlapAmount);
+
+    // Apply negative margin to create overlap
+    flexItems.forEach((item, index) => {
+        if (index !== 0) {
+            item.style.marginRight = `-${overlapAmount}px`;
+        }
+    });
+});
     </script>
+    
 </body>
 </html>

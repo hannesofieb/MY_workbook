@@ -1,27 +1,34 @@
-function captionAppear(){
-    document.addEventListener("click", event => {
-        const img = event.target.closest(".toggle-image");
-        if (img && img.nextElementSibling.tagName === "FIGCAPTION") {
-            img.nextElementSibling.classList.toggle("hidden");
+window.addEventListener('load', function() {
+    const container = document.querySelector('.container');
+    const flexItems = document.querySelectorAll('.flex-item');
+    let totalWidth = 0;
+
+    // Calculate the total width of flex items
+    flexItems.forEach(item => {
+        totalWidth += item.getBoundingClientRect().width;
+    });
+
+    console.log('Total Width:', totalWidth);
+
+    // Get viewport width
+    const viewportWidth = window.innerWidth;
+
+    console.log('Viewport Width:', viewportWidth);
+
+    // Set container width to the minimum of total width and viewport width
+    container.style.width = `${Math.min(totalWidth, viewportWidth)}px`;
+
+    console.log('Container Width:', container.style.width);
+
+    // Calculate the overlap amount per flex item
+    const overlapAmount = (totalWidth - viewportWidth) / (flexItems.length - 3);
+
+    console.log('Overlap Amount:', overlapAmount);
+
+    // Apply negative margin to create overlap
+    flexItems.forEach((item, index) => {
+        if (index !== 0) {
+            item.style.marginLeft = `-${overlapAmount}px`;
         }
     });
-}
-
-// What you could do is create a function which resizes your image and caption, by applying new class 
-// names that have styling to make tgh eimage full page width
-
-
-function pageScroll() {
-    window.scrollBy(1,0);
-    scrolldelay = setTimeout(pageScroll,10);
-}
-
-function scrollHorizontally(e) {
-    e = window.event || e;
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-    var scrollSpeed = 60; // Janky jank <<<<<<<<<<<<<<
-    document.documentElement.scrollLeft -= (delta * scrollSpeed);
-    document.body.scrollLeft -= (delta * scrollSpeed);
-    e.preventDefault();
-  }
-  
+});
