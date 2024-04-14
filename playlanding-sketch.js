@@ -46,6 +46,14 @@ function startTyping() {
 
 startTyping();
 
+// the code above is inspired from Mathilda Sutho's Git Repo for INteractive Media, week 3 page: 
+// https://github.com/matildasutho/matildasutho.github.io/tree/main/InteractiveMedia2024/Week3
+// it was tinkered further with use of chatGPT to get the finished result.
+
+
+
+
+
 // p5 code
 function setup(){
     let cnv = createCanvas(windowWidth, windowHeight);

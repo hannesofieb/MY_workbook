@@ -13,7 +13,7 @@ nav{
     color: var(--white-alt);
 
 }
-a:link {padding: 10%;
+a:link {
     color: var(--white-alt);
 }
   
@@ -23,8 +23,4 @@ a:visited {
   
 a:active {
     color: var(--black-alt);
-}
-
-a:hover{
-    color: yellow;
 }
