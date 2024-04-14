@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shapes-style.css">
+    <title>shapes!</title>
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+</head>
+<body>
+    <header>
+      <p>There is a pattern to the chaos.</p>
+    </header>
+    <div id="mydiv">
+        <b>The rules</b>
+        <p>Canvas Board: 27 Grid (9 x 3)</p>
+        <p>You will roll a dice 3 times in total</p>
+        <p>First roll determines the SHAPE and COLOUR.  <br> Odds are blue, evens are green</p>
+        <ul> > if 1 or 4: SQUARE</ul>
+        <ul> > if 2 or 5: TRIANGLE</ul>
+        <ul> > if 3 or 6: CIRCLE</ul>
+        <p>Second roll determines x-position</p>
+        <p>Third roll determines y-position</p>
+        <p>RULE FOR SHAPES: Squares and triangles are placed inside the grids, the circles needs to overlap the lines</p>
+      </div>
+
+    <footer>
+      <a href="../play.html"><img src="icons/backIcon.png" alt=""></a>
+    </footer>
+    <script src="shapes-sketch.js"></script>
+  </body>
+</html>

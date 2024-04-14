@@ -1,0 +1,38 @@
+#mydiv {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-start;
+
+    background-color: #ffffcc;
+    height: auto;
+    width: 25vw;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+
+    cursor: grab;
+
+  }
+  
+  b{
+    font-family: monospace;
+    color: var(--white);  
+    padding: 1em 0 1em 2em;
+    font-weight: bolder;
+  }
+
+  #mydiv p{
+    font-family: monospace;
+    font-size: smaller;
+    color: var(--white);  
+    padding: 1em 0 1em 2em;
+    margin: 0;
+  }
+  
+  #mydiv ul {
+    font-family: monospace;
+    font-size:xx-small;
+    color: var(--white);
+    padding-left: 4em;
+    margin: 0;
+  }
+  

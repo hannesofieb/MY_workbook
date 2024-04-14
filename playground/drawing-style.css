@@ -1,5 +1,5 @@
 :root {
-  --red: #ed2121;
+  --blue: #002fff;
   --white: #f8f6f1;
 }
 body {
@@ -7,7 +7,7 @@ body {
   padding: 0;
   height: 100vh;
   position: relative; /* Set position relative to body */
-  background-color: var(--red);
+  background-color: var(--blue);
   overflow: hidden;;
 }
 
