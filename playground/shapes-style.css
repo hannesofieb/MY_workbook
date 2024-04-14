@@ -1,9 +1,17 @@
+:root {
+    --red: #ed2121;
+    --white-alt: #f8f6f1;
+    --black-alt: #0C0C0C;
+    --yellow: #f7fabc;
+
+  }
+
 #mydiv {
     display: flex; /* Use flexbox */
     flex-direction: column; /* Arrange items vertically */
     align-items: flex-start;
 
-    background-color: #ffffcc;
+    background-color: var(--yellow);
     height: auto;
     width: 25vw;
     transform: translate(-50%, -50%);
@@ -15,7 +23,7 @@
   
   b{
     font-family: monospace;
-    color: var(--white);  
+    color: var(--black-alt);  
     padding: 1em 0 1em 2em;
     font-weight: bolder;
   }
@@ -23,7 +31,7 @@
   #mydiv p{
     font-family: monospace;
     font-size: smaller;
-    color: var(--white);  
+    color: var(--black-alt);  
     padding: 1em 0 1em 2em;
     margin: 0;
   }
@@ -31,7 +39,7 @@
   #mydiv ul {
     font-family: monospace;
     font-size:xx-small;
-    color: var(--white);
+    color: var(--black-alt);
     padding-left: 4em;
     margin: 0;
   }
