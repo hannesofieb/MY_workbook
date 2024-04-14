@@ -186,3 +186,7 @@ function refresh() {
 function roll(max) {
   return Math.floor(random(1, max + 1));
 }
+
+
+// the p5 sketch was made through prompt engineering with chatGPT, letting it know about rules of the game etc. 
+// few aesthetic alterations made myself
