@@ -1,3 +1,7 @@
+:root {
+    --nav-menu-col: #ed2121;
+  }
+
 body{
     background-color: #f8f6f1;
     margin: 0;
@@ -8,7 +12,7 @@ body{
 nav{
     display: block;
     position: relative;
-    z-index: 1000;
+    z-index: 2;
     width: 20vw;
     height: 15%;
     margin: 2em 0 1em 1em;
@@ -16,7 +20,7 @@ nav{
 
     font-family: monospace;
     font-size: 1.2em;
-    color: #ed2121;
+    color: var(--nav-menu-col);
     line-height: 1.5em;
 }
 
@@ -28,13 +32,13 @@ a{
     text-decoration: none;
 }
 a:link {
-    color: #ed2121;
+    color: var(--nav-menu-col);
 }
   
 a:visited {
-    color: #ed2121;
+    color: var(--nav-menu-col);
 }
   
 a:active {
-    color: rgb(26, 21, 19);
+    color: #0C0C0C;
 }

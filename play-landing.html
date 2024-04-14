@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playground</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f6f1;
+            margin: 0;
+            height: 100vh;
+        }
+        #welcomeType, #instruction, #prompt, div {
+            font-family: monospace;
+            font-weight: 100;
+            font-size: 3em;
+            color: #ed2121;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        #blinker {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcomeType"></div>
+    <div id="instruction"></div>
+    <div id="prompt"></div>
+    <div id="blinker">|</div>
+
+    <script>
+        var welcomeText = document.getElementById("welcomeType");
+        var instructionText = document.getElementById("instruction");
+        var promptText = document.getElementById("prompt");
+
+        function typeWriter(text, element, i, fnCallback) {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(function() {
+                    typeWriter(text, element, i, fnCallback)
+                }, 110);
+            } else {
+                fnCallback();
+            }
+        }
+
+        function reverseTypeWriter(text, element, i, fnCallback) {
+            if (i >= 0) {
+                element.innerHTML = text.substring(0, i);
+                i--;
+                setTimeout(function() {
+                    reverseTypeWriter(text, element, i, fnCallback);
+                }, 50);
+            } else {
+                fnCallback();
+            }
+        }
+
+        function startTyping() {
+            typeWriter("Welcome to the playground.", welcomeText, 0, function() {
+                setTimeout(function() {
+                    reverseTypeWriter("Welcome to the playground.", welcomeText, "Welcome to the playground.".length - 1, function() {
+                        typeWriter("To enter, you need to say the secret password", instructionText, 0, function() {
+                            setTimeout(function() {
+                                reverseTypeWriter("To enter, you need to say the secret password", instructionText, "To enter, you need to say the secret password".length - 1, function() {
+                                    typeWriter("What's the secret password?", promptText, 0, function() {
+                                    });
+                                });
+                            }, 2000);
+                        });
+                    });
+                }, 2000);
+            });
+        }
+
+        startTyping();
+    </script>
+</body>
+</html>
+
+
+<!-- CREDITS
+Inspiration for the type-animation is from Mathilda Sutho's github repo for week 3: https://github.com/matildasutho/matildasutho.github.io/tree/main/InteractiveMedia2024/Week3
+The code has been tinkered with to get the full typewriter aesthetics, including a reverse-typewriter animation and blinker animation with the help of prompt-engineering with ChatGPT -->
