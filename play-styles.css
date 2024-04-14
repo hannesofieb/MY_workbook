@@ -24,3 +24,7 @@ a:visited {
 a:active {
     color: var(--black-alt);
 }
+
+a:hover{
+    color: yellow;
+}

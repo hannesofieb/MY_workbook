@@ -1,0 +1,43 @@
+body{
+  margin: 0;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f6f1;
+  margin: 0;
+  height: 100vh;
+}
+#welcomeType, #instruction, #prompt, div {
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 3em;
+  color: #ed2121;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+#blinker {
+  animation: blink 1s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+      opacity: 1;
+  }
+  25%, 75% {
+      opacity: 0;
+  }
+}
