@@ -1,29 +1,41 @@
-var data = [
-    {
-      welcomeType:
-        "<span>Welcome to the playground</span><br/>",
-    },
-  ];
-  
-  var allElements = document.getElementsByClassName("welcome-txt");
-  for (var j = 0; j < allElements.length; j++) {
-    var currentElementId = allElements[j].id;
-    var currentElementIdContent = data[0][currentElementId];
-    var element = document.getElementById(currentElementId);
-    var devTypeText = currentElementIdContent;
-  
-    // type code
-    var i = 0,
-      isTag,
-      text;
-    (function type() {
-      text = devTypeText.slice(0, ++i);
-      if (text === devTypeText) return;
-      element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
-      var char = text.slice(-1);
-      if (char === "<") isTag = true;
-      if (char === ">") isTag = false;
-      if (isTag) return type();
-      setTimeout(type, 50);
-    })();
+// JavaScript for drag-and-drop functionality
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
   }
+
+  function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+  }
+}
+
+// Initialize drag-and-drop for each element with the "drag" class
+var dragElements = document.getElementsByClassName("drag");
+for (var i = 0; i < dragElements.length; i++) {
+  dragElement(dragElements[i]);
+}

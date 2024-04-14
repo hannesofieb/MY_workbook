@@ -2,7 +2,6 @@
     --red: #ed2121;
     --white-alt: #f8f6f1;
     --black-alt: #0C0C0C;
-
   }
 
 body{
@@ -24,3 +23,24 @@ a:visited {
 a:active {
     color: var(--black-alt);
 }
+
+/* #gravity{
+    display: block;
+
+} */
+
+.play-link{
+    border-radius: 50em;
+    border: 0.1em solid var(--white-alt);
+    background-color: var(--red);
+    padding: 0 1em;
+    height: 2em;
+
+    text-align: center;
+    display: inline-block; /* Ensure the anchor tag behaves as a block element */
+    line-height: 2em;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+

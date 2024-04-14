@@ -1,0 +1,35 @@
+:root {
+  --red: #ed2121;
+  --white: #f8f6f1;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative; /* Set position relative to body */
+  background-color: var(--red);
+  overflow: hidden;;
+}
+
+canvas {
+  display: block;
+}
+
+p{
+  font-family: monospace;
+  color: var(--white);
+
+  padding: 1em 0 1em 2em;
+}
+
+footer {
+  position: absolute; /* Set position absolute */
+  bottom: 0; /* Align to bottom */
+  right: 0; /* Align to right */
+  padding: 10px; /* Add some padding for better visibility */
+}
+
+img{
+  width: 50%;
+  height: auto;
+}
