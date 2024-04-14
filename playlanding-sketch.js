@@ -79,11 +79,11 @@ function draw() {
             console.log(micLevel);
         }
     }
-    // In this modification, the showMessage flag is initially set to true. When the microphone level exceeds 0.03 
+    
+// In this modification, the showMessage flag is initially set to true. When the microphone level exceeds 0.03 
 // and the message hasn't been displayed yet (controlled by the showMessage flag), the message will be displayed. 
 // After displaying the message once, the showMessage flag is set to false, preventing the message from being displayed 
 // repeatedly. This way, the message will only be displayed once until the showMessage flag is set back to true.
-
 }
 
 
