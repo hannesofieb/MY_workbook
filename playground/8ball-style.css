@@ -1,13 +1,8 @@
 :root {
-  --green: #13c54e;
+  --purple: #24024e;
   --white: #f8f6f1;
 }
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--green);
-}
 
-/* canvas {
-  display: block;
-} */
+  background-color: var(--purple);
+}

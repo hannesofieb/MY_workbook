@@ -140,9 +140,9 @@ function rollDice() {
 
     let color;
     if (colorRoll === 1) {
-      color = '#0000ff';
-    } else {
       color = '#5ab2ff';
+    } else {
+      color = '#13c54e';
     }
 
     let fillShape = random(2) > 1; // Randomly choose whether to fill the shape or not

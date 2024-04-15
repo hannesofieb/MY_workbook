@@ -53,7 +53,7 @@ function draw() {
   // Background ellipse
   noStroke();
   fill(155, 0, 255, 50); 
-  ellipse(windowWidth / 2, windowHeight * 0.4, maxWidth + 40, textHeight * 20); // Adjust size based on text width
+  ellipse(windowWidth / 2, windowHeight * 0.4, maxWidth + 40, maxWidth + 40); // Adjust size based on text width
 
   // Answer text
   fill(255);

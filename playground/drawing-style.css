@@ -8,7 +8,7 @@ body {
   height: 100vh;
   position: relative; /* Set position relative to body */
   background-color: var(--blue);
-  overflow: hidden;;
+  overflow: hidden;
 }
 
 canvas {
