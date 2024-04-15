@@ -60,14 +60,14 @@ function setup() {
   let availableHeight = windowHeight - headerHeight - footerHeight;
   
   // Adjusting the grid dimensions to fit the available space
-  gridHeight = availableHeight / numRows;
+  gridHeight = (windowHeight*0.85) / numRows;
   gridWidth = windowWidth / numCols;
   
   // Set up the circle grid offset
   circleGridOffsetX = gridWidth / 2;
   circleGridOffsetY = gridHeight / 2;
 
-  createCanvas(windowWidth, availableHeight);
+  createCanvas(windowWidth, windowHeight*0.85);
   
   rollButton = createButton('Stop');
   rollButton.position(10, availableHeight + 10);
@@ -140,9 +140,9 @@ function rollDice() {
 
     let color;
     if (colorRoll === 1) {
-      color = 'green';
+      color = '#0000ff';
     } else {
-      color = 'blue';
+      color = '#5ab2ff';
     }
 
     let fillShape = random(2) > 1; // Randomly choose whether to fill the shape or not
