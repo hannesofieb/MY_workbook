@@ -110,3 +110,4 @@ function applyGravity() {
 setInterval(applyGravity, 2); // Adjust the interval for smoother animation
 
 
+// testing to see if update is coming to github
