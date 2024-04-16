@@ -69,10 +69,10 @@ function draw() {
         // Your p5.js code goes here
         micLevel = mic.getLevel();
 
-        if (micLevel > 0.03 && micLevel < 0.8) {
+        if (micLevel > 0.1 && micLevel < 0.8) {
             window.location.href = "play.html";
             console.log(micLevel);
-        } else if (micLevel > 0.5 && showMessage) {
+        } else if (micLevel > 0.8 && showMessage) {
             typeWriter("Secret Password won't be so secret if you start yelling...", feedback, 0, function() {
                 showMessage = false; // Set the flag to false after displaying the message once
                 console.log(micLevel);
