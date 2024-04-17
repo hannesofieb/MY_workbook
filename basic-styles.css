@@ -43,3 +43,19 @@ a:visited {
 a:active {
     color: #0C0C0C;
 }
+
+/* type */
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: sans-serif;
+    font-size: 0.7em;
+}

@@ -1,24 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="basic-styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qwq2sbn.css">
+    <!-- <link rel="icon" type="image/x-icon" href="workbook/cursor01.png"> -->
+    
+    <title>MY_WORKBOOK</title>
 
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
-  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="audioInn_tutorial.js"></script>
-  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
-
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
+    <style>
+      /* Fixing the navigation bar */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 17vw;
+        height: 17vh;
+        background-color: #f8f6f1; 
+        z-index: 2; 
+        padding: 2em;
     }
-  </style>
-</head>
+      /* IMAGE GALLERY */
+    .container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        position:relative;
+        margin-top: 1em;
 
+    } 
+
+    .item{
+        width: 17vw;
+        height: 17vh;
+        padding: 0.5em 0.5em 1.5em 0.5em;
+        flex: auto;
+    }
+
+    img, .gifs{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .caption{
+      overflow: caption;
+    }
+    </style>
+</head>
 <body>
+  <nav>
+    <li><a href="index.html"> my_workbook</a></li>
+    <li><a href="research.html">research</a></li>
+    <li><a href="playlanding.html">play</a></li>
+  </nav>
+  <section class="container scroll-container">
+    <figure class="item scroll-text">
+        <img src="workbook/img/W1_gestureDictionary01.jpg" class="toggle-image" alt="grid showing various gestures">
+        <figcaption class="caption">dictionary of gestures: exploring interacting gestures</figcaption>
+    </figure>
+    <figure class="item  scroll-text">
+        <img src="workbook/img/W1_gestureDictionary02.jpg" class="toggle-image" alt="grid showing various gestures">
+        <figcaption class="caption">dictionary of gestures: exploring more interacting gestures</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W1_gestureDictionary03.jpg" class="toggle-image" alt="grid showing various gestures">
+        <figcaption class="caption">dictionary of gestures: exploring more unconventional interacting gestures</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W1_anatomyOfWWW01.jpg" class="toggle-image" alt="laptop screen showing website">
+        <figcaption class="caption">PLAYING TAG: getting more comfortable with HTML, but first getting a website idea from DESIGNERCIZE</figcaption>
+    </figure>            
+    <figure class="item scroll-text">
+        <img src="workbook/img/W1_anatomyOfWWW02.jpg" class="toggle-image" alt="wireframes">
+        <figcaption class="caption">PLAYING TAG: getting more comfortable with HTML, but first we need to make WIREFRAMES</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W1_anatomyOfWWW03.jpg" class="toggle-image" alt="html tags printed out and laid down on floor">
+        <figcaption class="caption">PLAYING TAG: getting more comfortable with HTML, on a team of 4 we ran up to gather tags to build the wireframe</figcaption>
+    </figure>
+    <!--WEEK 2 -->
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-01v2.gif" class="toggle-image gifs" alt="gif of first website version">
+        <figcaption class="caption">MY_WORKBOOK v01</figcaption>
+    </figure>
+    <figure class="item scroll-text"> 
+        <img src="workbook/img/W2_crazy8s01.jpg" class="toggle-image" alt="4 of the crazy 8 wireframes">
+        <figcaption class="caption">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
+    </figure>
+    <figure class="item scroll-text"> 
+        <img src="workbook/img/W2_crazy8s02.jpg" class="toggle-image" alt="4 of the crazy 8 wireframes">
+        <figcaption class="caption">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
+    </figure>
+    <figure class="item scroll-text"> 
+        <img src="workbook/img/W2_crazy8s04.png" class="toggle-image" alt="crazy 8 sheets on wall">
+        <figcaption class="caption">CRAZY 8s: Using one minute per rectangle to wireframe the landing page of MY_WORKBOOK</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W2_MakeItGlow01.jpg" class="toggle-image" alt="">
+        <figcaption class="caption">MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W2_MakeItGlow02.jpg" class="toggle-image" alt="">
+        <figcaption class="caption">MAKE IT BLING: adding estimates and notes on the final sketch for the CSS of margins, fonts, sizes, colours, etc</figcaption>
+    </figure>
+    <!--WEEK 3 -->
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-02v2.gif" class="toggle-image gifs" alt="gif of website development">
+        <figcaption class="caption">MY_WORKBOOK v01</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W3_responsivePhone.jpg" class="toggle-image" alt="mobile wireframe of website">
+        <figcaption class="caption">RESPONSIVE: making wireframes for mobile version</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-14-03v2.gif" class="toggle-image gifs" alt="gif of website development">
+        <figcaption class="caption">MY_WORKBOOK v02</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-01v2.gif" class="toggle-image gifs" alt="gif of website development">
+        <figcaption class="caption">MY_WORKBOOK v03</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-02v2.gif" class="toggle-image gifs" alt="gif of website development">
+        <figcaption class="caption">MY_WORKBOOK v04</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/multimed/MY_WORKBOOK-2024-3-15-03v2.gif" class="toggle-image gifs" alt="gif of website development">
+        <figcaption class="caption">MY_WORKBOOK v05</figcaption>
+    </figure>
+    
+
+    <!-- WEEK 4 -->
+    <figure class="item scroll-text">
+        <img src="workbook/img/p5-w4.png" class="toggle-image" alt="p5 sketch code">
+        <figcaption class="caption">First ever p5 sketch, this will have a fading mouse-moving square dragon snake</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img-before-opt/w4p5.gif" class="toggle-image" alt="p5 sketch: fading moving square">
+        <figcaption class="caption">A fading mouse-moving square dragon snake</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/p5-imagedraw.png" class="toggle-image" alt="p5 sketch: drawing with images">
+        <figcaption class="caption">Drawing with one of my favourite images</figcaption>
+    </figure>
+
+    <!-- WEEK 5 -->
+    <figure class="item scroll-text">
+        <img src="workbook/img/p5-w5.png" class="toggle-image" alt="p5 sketch code">
+        <figcaption class="caption">Second ever p5 sketch, this uses the webcam and draws dots behind it based on colours in the video capture</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/p5w5-webcamdotArt.png" class="toggle-image" alt="webcam p5 sketch">
+        <figcaption class="caption">P5 testing out the webcam but make it dot art! (palette from webcam capture)</figcaption>
+    </figure><figure class="item scroll-text">
+        <img src="workbook/img/p5-vidCaptureFilter.png" class="toggle-image" alt="webcam p5 sketch">
+        <figcaption class="caption">P5 testing out the webcam</figcaption>
+    </figure>
+
+    <!-- WEEK 6 -->
+    <figure class="item scroll-text">
+        <img src="workbook/img/MY_WORKBOOK-2024-4-16-01v3.png" class="toggle-image" alt="website development">
+        <figcaption class="caption">MY_WORKBOOK v06</figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/p5-auidoTutorial.png" class="toggle-image" alt="p5 sketch code">
+        <figcaption class="caption">Did a P5 tutorial on audio inn feature so I could see mic levels and use it for <a href="playlanding.html">play page</a></figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img-before-opt/p5-auditinn-test.gif" class="toggle-image gifs" alt="p5 audio mic level graph">
+        <figcaption class="caption">Did a P5 tutorial on audio inn feature so I could see mic levels and use it for <a href="playlanding.html">play page</a></figcaption>
+    </figure>
+    <figure class="item scroll-text">
+        <img src="workbook/img/W6_groupData02.jpg" class="toggle-image" alt="bunch of items">
+        <figcaption class="caption">In a group of 5 we got all our stuff out of our bags and sorted it from what a southener would have (left) to what a northener would have (right)</figcaption>
+    </figure>
+
+    <!-- WEEK 7 -->
+    <figure class="item scroll-text">
+        <img src="workbook/img/drawing-portrait.png" class="toggle-image" alt="portrait">
+        <figcaption class="caption">Drawing a portrait of a man with my p5 sketch on my website #meta #notreallymeta #ineedsleep</figcaption>
+    </figure>
+
+  </section>
+
 
 </body>
-
 </html>
+
+
+
