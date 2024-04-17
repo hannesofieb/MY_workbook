@@ -49,7 +49,7 @@
     }
 
     .caption{
-      overflow: caption;
+      display: none;
     }
 
     footer{
@@ -66,6 +66,72 @@
         cursor: pointer;
         margin-right: 2em;
     }
+
+    .item.full-screen figure {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+      background-color: #0c0c0c;
+      opacity: 0.4;
+    }
+    /* Overlay */
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0c0c0c;
+  opacity: 0;
+  pointer-events: none; /* Ensure clicks fall through to underlying elements */
+  z-index: 2;
+}
+
+/* Overlay */
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0c0c0c;
+  opacity: 0;
+  pointer-events: none; /* Ensure clicks fall through to underlying elements */
+  z-index: 2;
+}
+
+/* Full-screen image */
+.item.full-screen img {
+  width: auto;
+  height: 95vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+/* Full-screen caption */
+.item.full-screen .caption {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  z-index: 4;
+}
+
+
+
+
+    
     </style>
 </head>
 <body>
@@ -206,6 +272,8 @@
     <button id="refreshButton" title="click to see more workbook content"><img src="workbook/noun-refresh-6784547.svg" alt=""></button>
   </footer>
 
+  <div id="overlay"></div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var container = document.querySelector(".container");
@@ -247,6 +315,45 @@
         showFirst12(items);
       });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+  var items = Array.from(document.querySelectorAll(".item"));
+  var overlay = document.getElementById("overlay");
+
+  items.forEach(function(item) {
+    item.addEventListener("click", function() {
+      if (!item.classList.contains("full-screen")) {
+        // Remove full-screen class from all items
+        items.forEach(function(item) {
+          item.classList.remove("full-screen");
+        });
+        // Add full-screen class to clicked item
+        item.classList.add("full-screen");
+        // Show overlay
+        overlay.style.opacity = "0.4";
+        overlay.style.pointerEvents = "auto";
+      } else {
+        // Remove full-screen class from clicked item
+        item.classList.remove("full-screen");
+        // Hide overlay
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }
+    });
+  });
+
+  // Add event listener to overlay to return image to original view
+  overlay.addEventListener("click", function() {
+    // Remove full-screen class from all items
+    items.forEach(function(item) {
+      item.classList.remove("full-screen");
+    });
+    // Hide overlay
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+  });
+});
+
   </script>
   
 
