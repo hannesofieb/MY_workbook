@@ -24,24 +24,21 @@ a:active {
     color: var(--black-alt);
 }
 
-/* #gravity{
-    display: block;
 
-} */
 
 .play-link{
     border-radius: 50em;
     border: 0.1em solid var(--white-alt);
     background-color: var(--red);
     padding: 0 1em;
-    height: 2em;
+    height: 2.5em;
 
     text-align: center;
     display: inline-block; /* Ensure the anchor tag behaves as a block element */
-    line-height: 2em;
+    line-height: 2.5em;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .drag{
