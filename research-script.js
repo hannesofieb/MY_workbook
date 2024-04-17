@@ -32,3 +32,5 @@ window.addEventListener('load', function() {
         }
     });
 });
+
+// Made in collaboration with chatGPT, I told it the wanted conditions etc, then it made the code for me.

@@ -75,3 +75,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Generated through prompt engineering with ChatGPT, then i personally tweaked a few details to fit my code

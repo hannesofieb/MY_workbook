@@ -46,7 +46,7 @@ function startTyping() {
 
 startTyping();
 
-// the code above is inspired from Mathilda Sutho's Git Repo for INteractive Media, week 3 page: 
+// the code above is inspired from matildasutho's Git Repo for Interactive Media, week 3 page: 
 // https://github.com/matildasutho/matildasutho.github.io/tree/main/InteractiveMedia2024/Week3
 // it was tinkered further with use of chatGPT to get the finished result.
 
@@ -81,7 +81,7 @@ function draw() {
         }
     }
     
-// In this modification, the showMessage flag is initially set to true. When the microphone level exceeds 0.03 
+// In this modification, the showMessage flag is initially set to true. When the microphone level exceeds 0.1 
 // and the message hasn't been displayed yet (controlled by the showMessage flag), the message will be displayed. 
 // After displaying the message once, the showMessage flag is set to false, preventing the message from being displayed 
 // repeatedly. This way, the message will only be displayed once until the showMessage flag is set back to true.
