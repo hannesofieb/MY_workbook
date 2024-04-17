@@ -18,18 +18,20 @@
         height: 17vh;
         background-color: #f8f6f1; 
         z-index: 2; 
-        padding: 2em;
+        padding: 3em;
+        margin: 0 3.5em;
     }
       /* IMAGE GALLERY */
     .container{
-        height: 100vh;
+        height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
         position:relative;
-        margin-top: 1em;
+        margin: 0 3.5em;
+        overflow: hidden;
 
     } 
 
@@ -48,6 +50,21 @@
 
     .caption{
       overflow: caption;
+    }
+
+    footer{
+      height: 10vh;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        height: 100%;
+        cursor: pointer;
+        margin-right: 2em;
     }
     </style>
 </head>
@@ -184,9 +201,54 @@
         <img src="workbook/img/drawing-portrait.png" class="toggle-image" alt="portrait">
         <figcaption class="caption">Drawing a portrait of a man with my p5 sketch on my website #meta #notreallymeta #ineedsleep</figcaption>
     </figure>
-
   </section>
+  <footer>
+    <button id="refreshButton" title="click to see more workbook content"><img src="workbook/noun-refresh-6784547.svg" alt=""></button>
+  </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var container = document.querySelector(".container");
+      var items = Array.from(document.querySelectorAll(".item"));
+      var refreshButton = document.getElementById("refreshButton");
+  
+      // Function to shuffle array
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        return array;
+      }
+  
+      // Function to show only the first 12 items
+      function showFirst12(array) {
+        array.slice(0, 12).forEach(function(item) {
+          item.style.display = "block";
+          container.appendChild(item);
+        });
+      }
+  
+      // Initial randomization and showing first 12
+      items = shuffleArray(items);
+      showFirst12(items);
+  
+      // Event listener for button click
+      refreshButton.addEventListener("click", function() {
+        // Clear container
+        container.innerHTML = "";
+        
+        // Shuffle array again
+        items = shuffleArray(items);
+  
+        // Show first 12 items
+        showFirst12(items);
+      });
+    });
+  </script>
+  
 
 </body>
 </html>
