@@ -2,135 +2,122 @@
     cursor: url("workbook/cursor01.png"), auto;
     } */
 
-
-
-
-/* TEXT*/
-h1{
-    font-family: "pf-videotext", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3em;
+/* Fixing position of navigation bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 17vw;
+    height: 17vh;
+    background-color: #f8f6f1; 
+    z-index: 2; 
+    padding: 3em;
+    margin: 0 3.5em;
 }
-
-figcaption{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 0.5em;
-}
-
-
-
-/* IMAGE GALLERY */
+  /* IMAGE GALLERY */
 .container{
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     position:relative;
+    margin: 0 3.5em;
+    overflow: hidden;
 
-} */
-
+} 
 .item{
-    width: 15%;
-    height: 15%;
+    width: 17vw;
+    height: 17vh;
     padding: 0.5em 0.5em 1.5em 0.5em;
     flex: auto;
 }
 
-.gifs{
-    width:200px;
-    height: 120px;
+
+img, .gifs{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
-img{
-    width:200px;
-    height: 150px;
-    object-fit: cover;
+.caption{
+  display: none;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  width: 100%;
+}
+
+footer{
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    height: 100%;
+    cursor: pointer;
+    margin-right: 2em;
 }
 
 
-/* make gallery scrollable */
-.container{
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px;
-    margin: 0 2em;
+/* Full-screen image */
+.item.full-screen img {
+    width: auto;
+    height: 95vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
 
-  }
+/* Full-screen caption */
+.item.full-screen .caption {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f6f1;
+  padding: 2em;
+  z-index: 4;
+}
 
+.item.full-screen figure {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    cursor: alias;
+}
 
+/* Overlay */
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f8f6f1;
+    opacity: 0;
+    pointer-events: none; /* Ensure clicks fall through to underlying elements */
+    z-index: 2;
+}
 
-  /* wiggle function retrieved from https://www.w3schools.com/howto/howto_css_shake_image.asp */
-  img:hover {
-      animation: shake 0.5s;
-      /* When the animation is finished, start again */
-      animation-iteration-count: infinite;
-  }
-
-  @keyframes shake {
-      0% { transform: translate(1px, 1px) rotate(0deg); }
-      10% { transform: translate(-1px, -2px) rotate(-1deg); }
-      20% { transform: translate(-3px, 0px) rotate(1deg); }
-      30% { transform: translate(1px, 2px) rotate(0deg); }
-      40% { transform: translate(1px, -1px) rotate(1deg); }
-      50% { transform: translate(-1px, 2px) rotate(-1deg); }
-      60% { transform: translate(0px, 1px) rotate(0deg); }
-      70% { transform: translate(1px, 1px) rotate(-1deg); }
-      80% { transform: translate(-1px, -1px) rotate(1deg); }
-      90% { transform: translate(1px, 2px) rotate(0deg); }
-      100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-
-  .scroll-container {
-      overflow: hidden;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      position:relative;
-  }
-
-  .hidden {
-      display: none;
-  }
-
-  .item {
-      width: 15%;
-      height: 15%;
-      padding: 0.5em 0.5em 1.5em 0.5em;
-      flex: auto;
-  }
-
-  /* Keyframes for scrolling */
-  @keyframes scroll-left {
-      from { transform: translateX(200vh); }
-      to { transform: translateX(-180vh); }
-  }
-
-  @keyframes scroll-right {
-      from { transform: translateX(-220vh); }
-      to { transform: translateX(180vh); }
-  }
-
-  /* Apply animations to alternate rows */
-  .scroll-text:nth-child(odd) {
-      animation: scroll-right 15s linear infinite;
-  }
-
-  .scroll-text:nth-child(even) {
-      animation: scroll-left 15s linear infinite;
-  }
-
-  /* Pause animation on hover */
-  .scroll-text:hover {
-      animation-play-state: paused;
-  }
-
-
-  /* full screen styles */
-  /* Your existing CSS styles */
+#overlay a{
+    display: flex;
+    justify-content: flex-end;
+    font-family: monospace;
+    font-size: 3em;
+    color: #ed2121;
+    margin-top: 1%;
+    margin-right: 3%;
+    z-index: 1000;
+}
