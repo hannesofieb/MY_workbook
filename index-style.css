@@ -49,6 +49,8 @@ img, .gifs{
 }
 
 footer{
+    display: flex;
+    align-items: center;
     height: 10vh;
     position: fixed;
     bottom: 0;
@@ -61,6 +63,26 @@ button {
     height: 100%;
     cursor: pointer;
     margin-right: 2em;
+}
+
+button.filter{
+    position: relative;
+    width: 5em;
+    height: 3.5em;
+    margin-bottom: 2%;
+    border-radius: 50em;
+
+    border: #ed2121 solid 0.2em;
+    background-color: #f8f6f1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ed2121;
+}
+
+button.filter#2a:hover,
+button.filter#2b:hover,
+button.filter#2c:hover {
+    background-color: #ed2121;
+    color: #f8f6f1;
 }
 
 
@@ -77,14 +99,26 @@ button {
 
 /* Full-screen caption */
 .item.full-screen .caption {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: #f8f6f1;
+  color: rgb(45, 28, 1);
   padding: 2em;
   z-index: 4;
+}
+
+figcaption a{
+    display: flex;
+    justify-content: flex-end;
+    font-family: monospace;
+    font-size: 3em;
+    color: #ed2121;
+    margin-right: 5%;
+    z-index: 1000;
 }
 
 .item.full-screen figure {
@@ -111,13 +145,3 @@ button {
     z-index: 2;
 }
 
-#overlay a{
-    display: flex;
-    justify-content: flex-end;
-    font-family: monospace;
-    font-size: 3em;
-    color: #ed2121;
-    margin-top: 1%;
-    margin-right: 3%;
-    z-index: 1000;
-}
