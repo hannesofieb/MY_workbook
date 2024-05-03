@@ -1,50 +1,77 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     var container = document.querySelector(".container");
-    var items = Array.from(document.querySelectorAll(".item"));
     var overlay = document.getElementById("overlay");
     var refreshButton = document.getElementById("refreshButton");
+    var filterButtons = document.querySelectorAll(".filter");
 
-    // Function to shuffle array
-    function shuffleArray(array) {
-        for (var i = array.length - 1; i > 0; i--) {
+    var itemsArray = Array.from(document.querySelectorAll(".item")); // Array of all .item elements
+    var itemsShuffled = []; // Array to store shuffled items
+
+    // Function to shuffle array and assign it to itemsShuffled
+    function shuffleItems() {
+        // Create a copy of itemsArray
+        var shuffledItems = itemsArray.slice();
+        
+        // Shuffle the copied array
+        for (var i = shuffledItems.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            var temp = shuffledItems[i];
+            shuffledItems[i] = shuffledItems[j];
+            shuffledItems[j] = temp;
         }
-        return array;
+        
+        // Assign the shuffled array to itemsShuffled
+        itemsShuffled = shuffledItems;
     }
 
     // Function to show only the first 12 items
-    function showFirst12(array) {
-        array.slice(0, 12).forEach(function(item) {
-            item.style.display = "block";
-            container.appendChild(item);
-        });
+    function showFirst12() {
+        container.innerHTML = ""; // Clear container
+        
+        // Loop through the first 12 items in itemsShuffled and append them to the container
+        for (var i = 0; i < 12; i++) {
+            container.appendChild(itemsShuffled[i]);
+        }
     }
 
-    // Initial randomization and showing first 12
-    items = shuffleArray(items);
-    showFirst12(items);
-
-    // Event listener for button click
-    refreshButton.addEventListener("click", function() {
+    // Function to show only items with specific class
+    function filterItems(classToDisplay) {
         // Clear container
         container.innerHTML = "";
         
-        // Shuffle array again
-        items = shuffleArray(items);
+        // Loop through itemsArray and display items with the specified class
+        itemsArray.forEach(function(item) {
+            if (item.classList.contains(classToDisplay) || classToDisplay === "all") {
+                container.appendChild(item);
+            }
+        });
+    }
 
-        // Show first 12 items
-        showFirst12(items);
+    // Initial randomization of items
+    shuffleItems();
+    showFirst12();
+
+    // Event listener for filter button click
+    filterButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var classToDisplay = button.id;
+            filterItems(classToDisplay);
+        });
     });
 
-    items.forEach(function(item) {
+    // Event listener for refresh button click
+    refreshButton.addEventListener("click", function() {
+        shuffleItems(); // Shuffle items
+        showFirst12(); // Display first 12 shuffled items
+    });
+
+    // Event listener for clicking on item
+    itemsArray.forEach(function(item) {
         item.addEventListener("click", function() {
             if (!item.classList.contains("full-screen")) {
                 // Remove full-screen class from all items
-                items.forEach(function(item) {
+                itemsArray.forEach(function(item) {
                     item.classList.remove("full-screen");
                 });
                 // Add full-screen class to clicked item
@@ -65,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listener to overlay to return image to original view
     overlay.addEventListener("click", function() {
         // Remove full-screen class from all items
-        items.forEach(function(item) {
+        itemsArray.forEach(function(item) {
             item.classList.remove("full-screen");
         });
         // Hide overlay
@@ -73,6 +100,9 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.style.pointerEvents = "none";
     });
 });
+
+
+
 
 
 // Generated through prompt engineering with ChatGPT, then i personally tweaked a few details to fit my code
