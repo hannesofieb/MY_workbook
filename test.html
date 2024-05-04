@@ -187,21 +187,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var itemsArray = Array.from(document.querySelectorAll(".item")); // Array of all .item elements
     var itemsShuffled = []; // Array to store shuffled items
 
-    // Function to shuffle array and assign it to itemsShuffled
-    function shuffleItems() {
-        // Create a copy of itemsArray
-        var shuffledItems = itemsArray.slice();
-        
-        // Shuffle the copied array
-        for (var i = shuffledItems.length - 1; i > 0; i--) {
+    // Function to shuffle array
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
-            var temp = shuffledItems[i];
-            shuffledItems[i] = shuffledItems[j];
-            shuffledItems[j] = temp;
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
-        
-        // Assign the shuffled array to itemsShuffled
-        itemsShuffled = shuffledItems;
+        return array;
     }
 
     // Function to show only the first 12 items
@@ -214,34 +208,45 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Function to show only items with specific class
-    function filterItems(classToDisplay) {
+    // Function to show only items with specific class and shuffle them before display
+    function filterAndShuffleItems(classToDisplay) {
         // Clear container
         container.innerHTML = "";
-        
-        // Loop through itemsArray and display items with the specified class
+
+        // Create an array to store filtered items
+        var filteredItems = [];
+
+        // Loop through itemsArray and add items with the specified class to filteredItems
         itemsArray.forEach(function(item) {
             if (item.classList.contains(classToDisplay) || classToDisplay === "all") {
-                container.appendChild(item);
+                filteredItems.push(item);
             }
         });
+
+        // Shuffle filtered items
+        filteredItems = shuffleArray(filteredItems);
+
+        // Loop through the first 12 items in filteredItems and append them to the container
+        for (var i = 0; i < 12 && i < filteredItems.length; i++) {
+            container.appendChild(filteredItems[i]);
+        }
     }
 
     // Initial randomization of items
-    shuffleItems();
+    itemsShuffled = shuffleArray(itemsArray);
     showFirst12();
 
     // Event listener for filter button click
     filterButtons.forEach(function(button) {
         button.addEventListener("click", function() {
             var classToDisplay = button.id;
-            filterItems(classToDisplay);
+            filterAndShuffleItems(classToDisplay);
         });
     });
 
     // Event listener for refresh button click
     refreshButton.addEventListener("click", function() {
-        shuffleItems(); // Shuffle items
+        itemsShuffled = shuffleArray(itemsArray); // Shuffle items
         showFirst12(); // Display first 12 shuffled items
     });
 
