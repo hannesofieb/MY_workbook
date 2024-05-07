@@ -117,7 +117,7 @@ figcaption a{
     font-family: monospace;
     font-size: 3em;
     color: #ed2121;
-    margin-right: 5%;
+    margin: 0 5%;
     z-index: 1000;
 }
 
